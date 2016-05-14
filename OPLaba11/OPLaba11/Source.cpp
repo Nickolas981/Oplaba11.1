@@ -3,6 +3,7 @@
 #include<vector>
 #include<string>
 #include<map>
+#include"Heap.h"
 
 using namespace std;
 void wordCount();
@@ -51,15 +52,22 @@ void push(string data, int key,int counter, node *&t)
 
 }
 void main() {
-	node *head_Word = NULL;
+	//node *head_Word = NULL;
 	read();
 	//wordCount();
-	bubbleSort();
-	for (int i = 0; i < vec.size(); i++)
+	//bubbleSort();
+	//for (int i = 0; i < vec.size(); i++)
+	//{
+	//	push(vec[i].first, i,vec[i].second, head_Word);
+	//}
+	//print_Tree(head_Word, 0);
+	//system("pause");
+	Heap heap;
+	for (int  i = 0; i < vec.size(); i++)
 	{
-		push(vec[i].first, i,vec[i].second, head_Word);
+		heap.addelem(vec[i].first);
 	}
-	print_Tree(head_Word, 0);
+	heap.outHeap();
 	system("pause");
 }
 void read() {
